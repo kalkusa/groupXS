@@ -1,7 +1,8 @@
 export class Product {
-  public price: number;
-
-  constructor(price: number) {
-    this.price = price;
-  }
+  constructor(
+    public price: number,
+    public name: string,
+    public isDiscountAppliet: boolean,
+    public guid: string,
+  ) {}
 }

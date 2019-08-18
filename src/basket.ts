@@ -13,6 +13,13 @@ export class Basket {
     this.products = [...this.products, ...products];
   }
 
+  public addDiscount(discount: IDiscount) {
+    this.discounts.push(discount);
+  }
+
+  public addDiscounts(discount: IDiscount[]) {
+    this.discounts = [...this.discounts, ...discount];
+  }
   public getPrice() {
     return this.products.reduce((subtotal: number, product: Product) => {
       return subtotal + product.price;
@@ -20,9 +27,11 @@ export class Basket {
   }
 
   public getDiscountAmount() {
-    return this.discounts.reduce((subtotal: number, discount: IDiscount) => {
-      return subtotal + discount.calculate(this.products);
-    }, 0);
+    // return this.discounts.reduce((subtotal: number, discount: IDiscount) => {
+    //   return subtotal + discount.calculate(this.products);
+    // }, 0);
+    //TODO
+    return 0;
   }
 
   public getPriceAfterDiscount() {

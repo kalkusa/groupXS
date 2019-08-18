@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "debug": "jest --watch"
   },
   "dependencies": {
     "@types/jest": "^24.0.17",
