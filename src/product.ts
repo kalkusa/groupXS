@@ -1,8 +1,9 @@
 export class Product {
   constructor(
     public price: number,
+    public discountedPrice: number,
     public name: string,
-    public isDiscountAppliet: boolean,
+    public isDiscountApplied: boolean,
     public guid: string,
   ) {}
 }
