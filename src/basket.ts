@@ -1,5 +1,6 @@
 import { IDiscount } from './discount';
 import { Product } from './product';
+import { BestDiscountCombinationFinder } from './bestDiscountCombinationFinder';
 
 export class Basket {
   public products: Product[] = [];
@@ -32,8 +33,13 @@ export class Basket {
       const discount = this.discounts[0].calculate(this.products);
       discount.products.forEach(product => {
         product.discountedPrice = Number((product.price * 0.01 * (100 - discount.percentage)).toFixed(1));
+        product.isDiscountApplied = true;
       });
     }
+
+    // TODO Find optimum discount combination
+    const bestDiscountCombinationFinder = new BestDiscountCombinationFinder();
+    bestDiscountCombinationFinder.getBestDiscountCombination(this.products, this.discounts);
 
     return 0;
   }

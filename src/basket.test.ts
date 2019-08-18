@@ -67,6 +67,7 @@ describe('algorithm should', () => {
       fiveDifferentPotterBooksDiscount,
     ]);
     expect(basket.products.length).toBe(8);
+    // Optimum in this case is twice applied four different books 20% discount
     expect(basket.getPriceAfterDiscount()).toBe(51.2);
   });
 
